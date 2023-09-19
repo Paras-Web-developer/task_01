@@ -141,7 +141,7 @@ export default function Formpage() {
           }
           if (!values.textarea) {
             errors.textarea = "Required";
-          } else if (values.textarea.length < 100) {
+          } else if (values.textarea.length < 50) {
             errors.textarea = "Textarea must be at least 100 characters";
           }
           return errors;
@@ -247,7 +247,7 @@ export default function Formpage() {
                 as="textarea"
                 name="textarea"
                 rows={5}
-                cols={50}
+                cols={30}
                 placeholder="Write here"
                 required
               />

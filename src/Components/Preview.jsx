@@ -5,12 +5,12 @@ import { Link, useLocation } from "react-router-dom";
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   background-color: #f0f0f0;
-  padding: 20px;
+  padding: 40px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  /* width: 500px; */
+  width: 500px;
   margin: 0 auto;
 
   h1 {
@@ -38,7 +38,9 @@ const Wrapper = styled.section`
     width: 100%;
     outline: none;
   }
- 
+  .text .value {
+    overflow: scroll;
+  }
 `;
 
 export default function Preview() {
