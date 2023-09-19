@@ -55,6 +55,14 @@ const Wrapper = styled.section`
     }
   }
 
+  .gender label {
+    color: black;
+    font-weight: 300;
+  }
+  .Interests label {
+    color: black;
+    font-weight: 300;
+  }
   .error {
     color: red;
     font-size: 12px;
@@ -65,7 +73,8 @@ const Wrapper = styled.section`
     justify-content: space-between;
     margin-top: 20px;
 
-    button {
+    button,
+    div {
       flex: 1;
       padding: 10px;
       margin: 0 2px;
@@ -80,7 +89,7 @@ const Wrapper = styled.section`
       color: #fff;
 
       &:hover {
-        background-color: #0056b3;
+        font-weight: bolder;
       }
     }
 
@@ -89,7 +98,9 @@ const Wrapper = styled.section`
       color: #fff;
 
       &:hover {
-        background-color: #28a745;
+        background-color: transparent;
+        color: #28a745;
+        border: 1px solid #28a745;
       }
     }
   }
@@ -103,7 +114,7 @@ export default function Formpage() {
     }
   }
   console.log(data);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const location = useLocation();
 
   return (
@@ -188,7 +199,7 @@ export default function Formpage() {
             </div>
             <div className="form-field">
               <label>Gender:</label>
-              <div>
+              <div className="gender">
                 <label>
                   <Field type="radio" name="gender" value="Male" /> Male
                 </label>
@@ -200,7 +211,7 @@ export default function Formpage() {
             </div>
             <div className="form-field">
               <label>Interests:</label>
-              <div>
+              <div className="Interests">
                 <label>
                   <Field
                     type="checkbox"
@@ -254,7 +265,9 @@ export default function Formpage() {
             </div>
             <div className="button-container" type="submit">
               {/* Use a regular button to trigger form submission */}
-              <button onClick={send}>preview</button>
+              <div className="preview-button" onClick={send}>
+                preview
+              </div>
               <button
                 type="submit"
                 className="submit-button"
