@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   background-color: #f0f0f0;
   padding: 40px;
   border-radius: 5px;
