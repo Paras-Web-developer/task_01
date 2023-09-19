@@ -103,7 +103,7 @@ export default function Formpage() {
     }
   }
   console.log(data);
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate(); 
   const location = useLocation();
 
   return (
@@ -151,7 +151,6 @@ export default function Formpage() {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
             setData(values);
-            // After form submission, navigate to the Preview component
           }, 400);
         }}
       >
