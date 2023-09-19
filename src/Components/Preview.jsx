@@ -28,7 +28,7 @@ const Wrapper = styled.section`
   .label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #1e7e34;
+    color: #28a745;
   }
 
   .value {
@@ -41,11 +41,40 @@ const Wrapper = styled.section`
   .text .value {
     overflow: scroll;
   }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  button {
+    background-color: #28a745;
+    color: #fff;
+    outline: none;
+    padding: 0.6rem;
+    border: none;
+    width: 50%;
+  }
 `;
 
 export default function Preview() {
   const location = useLocation();
   const formData = location?.state?.formData;
+
+  function submit() {
+    const obj = {
+      Name: formData?.name,
+      LastName: formData?.lastName,
+      Number: formData?.number,
+      Gender: formData?.gender,
+      Interests: formData?.interests.join(", "),
+      Location: formData?.location,
+      message: formData?.textarea,
+    };
+    alert(JSON.stringify(obj, null, 2));
+  }
 
   return (
     <Wrapper>
@@ -78,9 +107,13 @@ export default function Preview() {
         <span className="label">About:</span>
         <span className="value">{formData?.textarea}</span>
       </div>
-      <Link to="/" className="back-button">
-        Back to Form
-      </Link>
+      <div className="bottom">
+        <Link to="/" className="back-button">
+          Back to Form
+        </Link>
+
+        <button onClick={submit}>Final Submit</button>
+      </div>
     </Wrapper>
   );
 }

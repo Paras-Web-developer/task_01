@@ -22,7 +22,7 @@ const Wrapper = styled.section`
   label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #1e7e34;
+    color: #28a745;
   }
 
   .form-field {
@@ -89,7 +89,7 @@ const Wrapper = styled.section`
       color: #fff;
 
       &:hover {
-        background-color: #1e7e34;
+        background-color: #28a745;
       }
     }
   }
