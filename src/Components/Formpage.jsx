@@ -62,6 +62,7 @@ const Wrapper = styled.section`
   .Interests label {
     color: black;
     font-weight: 300;
+    margin: 0 13px;
   }
   .error {
     color: red;
@@ -159,7 +160,7 @@ export default function Formpage() {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            alert("Data Saved");
             setSubmitting(false);
             setData(values);
           }, 400);
@@ -273,7 +274,7 @@ export default function Formpage() {
                 className="submit-button"
                 disabled={isSubmitting}
               >
-                Submit
+                Save
               </button>
             </div>
           </Form>
